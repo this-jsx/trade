@@ -1,0 +1,171 @@
+html, body {
+    height: 100%;
+    margin: 0;
+} 
+
+/* Окно выбора заработка (sc - startscreen) */
+.sc {
+    height: 100%;
+    background: blanchedalmond url('assets/choose.jpg') no-repeat center;
+    background-size: cover;
+    position: fixed;
+    top: 0; right: 0; bottom: 0; left: 0;
+    z-index: 2;
+}
+
+.sc--hidden {
+    opacity: 0;
+    transition: opacity .7s ease-in-out;
+}
+
+.sc__wrapper {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sc--hidden .sc__wrapper {
+    transform: translateY(-50%);
+    transition: transform .7s ease-in-out
+}
+
+.sc__container {
+    width: 800px;
+}
+
+.sc__heading {
+    margin: 0;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #fff;
+}
+
+.sc__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.sc__item-link {
+    width: 250px;
+    height: 250px;
+    background-color: rgba(255, 255, 255, .5);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}
+
+.sc__item-link::before {
+    content: '';
+    height: 70px;
+    width: 70px;
+    background-color: honeydew;
+    margin-bottom: 15px;
+}
+
+.sc__item-link:hover {
+    background-color: rgba(255, 255, 255, .3);
+}
+
+.sc__item-link:focus {
+    outline: none;
+    box-shadow: 0 0 5px 5px #c3c3c3;
+}
+
+/* Навигационное меню */
+.nav {
+    border-bottom: 1px solid black;
+    position: absolute;
+    left: 0; right: 0;
+    z-index: 1;
+}
+
+.nav__menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 800px;
+    display: flex;
+    margin: auto;
+}
+
+.nav__menu-item {
+    flex-grow: 1;
+    flex-basis: 33.33%;
+}
+
+.nav__link {
+    cursor: pointer;
+    text-align: center;
+    padding: 25px 0;
+    color: black;
+    text-decoration: none;
+    display: block;
+    font-size: 1.2em;
+}
+
+.nav__link:focus {
+    outline: none;
+    background-color: rgba(0, 0, 0, .1);
+}
+
+.nav__link--active {
+    border-bottom: 2px solid red;
+}
+
+.main {
+    height: 100%;
+}
+
+/* Разделы */
+.section {
+    display: none;
+    padding-top: 120px;
+    height: 100%;
+    box-sizing: border-box;
+    opacity: 0;
+}
+
+.section--visible {
+    opacity: 1;
+    transition: opacity .7s ease-in-out;
+}
+
+.section[data-section="trade"] {
+    background: #ebebeb url('assets/trade.jpg') no-repeat center;
+    background-size: cover;
+}
+
+.section[data-section="invest"] {
+    background: aqua url('assets/invest.jpg') no-repeat center;
+    background-size: cover;
+}
+
+.section[data-section="invite"] {
+    background: honeydew url('assets/invite.jpg') no-repeat center;
+    background-size: cover;
+}
+
+.section__container {
+    width: 800px;
+    margin: auto;
+}
+
+.section__text {
+    width: 50%;
+    opacity: 0;
+    font-size: 1.2em
+}
+
+.section--visible .section__text {
+    opacity: 1;
+    transition: opacity .7s .7s ease-in-out;
+}
